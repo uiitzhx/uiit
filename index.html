@@ -13,25 +13,53 @@
       color: #333;
     }
     header {
-      background: linear-gradient(135deg, #004aad, #0066cc);
+      position: relative;
       color: white;
-      padding: 40px 20px;
       text-align: center;
+    }
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      background: url('door.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .hero-text h1 {
+      font-size: 42px;
+      margin: 0;
+    }
+    .hero-text p {
+      font-size: 18px;
+      margin-top: 10px;
     }
     nav {
       background: #003580;
-      padding: 10px;
+      padding: 12px;
       text-align: center;
     }
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 18px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 15px;
     }
     .container {
       max-width: 1000px;
-      margin: 30px auto;
+      margin: 40px auto;
       padding: 20px;
       background: white;
       border-radius: 10px;
@@ -42,12 +70,12 @@
       padding-left: 10px;
     }
     .section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
     .highlight {
       background: #eef3ff;
-      padding: 15px;
-      border-radius: 6px;
+      padding: 18px;
+      border-radius: 8px;
       margin-top: 15px;
     }
     footer {
@@ -57,13 +85,25 @@
       background: #f0f0f0;
       margin-top: 40px;
     }
+    @media (max-width: 768px) {
+      .hero {
+        height: 300px;
+      }
+      .hero-text h1 {
+        font-size: 28px;
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>UIIT Co., Ltd.</h1>
-  <p>Trade • E-commerce • Education & Training</p>
+  <div class="hero">
+    <div class="hero-text">
+      <h1>UIIT Co., Ltd.</h1>
+      <p>Trade • E-commerce • Education & Training</p>
+    </div>
+  </div>
 </header>
 
 <nav>
@@ -76,7 +116,7 @@
 <div class="container">
 
   <div id="about" class="section">
-    <h2>Company Overview / 会社概要 / 112233公司简介</h2>
+    <h2>Company Overview / 会社概要 / 公司简介</h2>
     <p>
       UIIT Co., Ltd. is based in Osaka, Japan. The company operates in international trade,
       online retail, and education & training services.
@@ -119,7 +159,7 @@
     </div>
 
     <div class="highlight">
-      <h3>Chinese Language & Cross‑Cultural Training / 中文及跨文化培训</h3>
+      <h3>Chinese Language & Cross-Cultural Training / 中文及跨文化培训</h3>
       <p>
         提供中文课程及中日商务文化培训，帮助企业与个人提升跨文化沟通能力。
       </p>
